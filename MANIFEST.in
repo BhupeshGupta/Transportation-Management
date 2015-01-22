@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include transportion_management *.css
+recursive-include transportion_management *.csv
+recursive-include transportion_management *.html
+recursive-include transportion_management *.ico
+recursive-include transportion_management *.js
+recursive-include transportion_management *.json
+recursive-include transportion_management *.md
+recursive-include transportion_management *.png
+recursive-include transportion_management *.py
+recursive-include transportion_management *.svg
+recursive-include transportion_management *.txt
+recursive-exclude transportion_management *.pyc
