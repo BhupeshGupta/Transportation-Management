@@ -6,4 +6,5 @@ import frappe
 from frappe.model.document import Document
 
 class TransportationRoute(Document):
-	pass
+    def autoname(self):
+        self.name = '{} - {}'.format(self.route_name, self.vehicle_make)

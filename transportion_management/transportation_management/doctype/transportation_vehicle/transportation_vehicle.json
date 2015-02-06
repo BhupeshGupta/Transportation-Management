@@ -10,11 +10,20 @@
  "document_type": "Master", 
  "fields": [
   {
+   "fieldname": "owner_type", 
+   "fieldtype": "Link", 
+   "label": "Owner Type", 
+   "options": "DocType", 
+   "permlevel": 0, 
+   "precision": "", 
+   "reqd": 1
+  }, 
+  {
    "description": "Used for maintaining payment accounts ", 
    "fieldname": "vehicle_owner_company", 
-   "fieldtype": "Link", 
+   "fieldtype": "Dynamic Link", 
    "label": "Vehicle Owner Company", 
-   "options": "Supplier", 
+   "options": "owner_type", 
    "permlevel": 0, 
    "precision": "", 
    "reqd": 1
@@ -49,7 +58,7 @@
    "in_list_view": 1, 
    "label": "Vehicle Make", 
    "no_copy": 0, 
-   "options": "6 Tires\n10 Tires", 
+   "options": "Auto\n6 Tires\n10 Tires", 
    "permlevel": 0, 
    "precision": "", 
    "print_hide": 0, 
@@ -67,19 +76,6 @@
    "options": "Driver", 
    "permlevel": 0, 
    "precision": ""
-  }, 
-  {
-   "default": "Free", 
-   "description": "Vehicle is on route or free.", 
-   "fieldname": "state", 
-   "fieldtype": "Select", 
-   "in_list_view": 1, 
-   "label": "State", 
-   "options": "Free\nEngaged", 
-   "permlevel": 0, 
-   "precision": "", 
-   "read_only": 1, 
-   "reqd": 0
   }
  ], 
  "hide_heading": 0, 
@@ -89,7 +85,7 @@
  "is_submittable": 0, 
  "issingle": 0, 
  "istable": 0, 
- "modified": "2015-01-31 11:44:09.114093", 
+ "modified": "2015-02-06 15:04:54.601240", 
  "modified_by": "Administrator", 
  "module": "Transportation Management", 
  "name": "Transportation Vehicle", 
