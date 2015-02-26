@@ -2,9 +2,9 @@
 # For license information, please see license.txt
 
 from __future__ import unicode_literals
-import frappe
 from frappe.model.document import Document
 
+
 class TransportationRoute(Document):
-    def autoname(self):
-        self.name = '{} - {}'.format(self.route_name, self.vehicle_make)
+	def autoname(self):
+		self.name = self.route_name

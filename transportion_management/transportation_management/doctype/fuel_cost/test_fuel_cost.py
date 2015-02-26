@@ -6,8 +6,8 @@ import unittest
 import frappe
 
 
-test_records = frappe.get_test_records('Transportation Route')
+test_records = frappe.get_test_records('Fuel Cost')
 
 
-class TestTransportationRoute(unittest.TestCase):
+class TestFuelCost(unittest.TestCase):
 	pass
