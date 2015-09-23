@@ -6,20 +6,24 @@ from frappe.model.document import Document
 from erpnext.accounts.general_ledger import make_gl_entries
 import frappe
 from erpnext.accounts.utils import get_fiscal_year
+from frappe.utils import flt
 
 class TransportationContract(Document):
 	def validate(self):
-		self.set_missing_values()
+		pass
 
 	def cancel(self):
 		super(TransportationContract, self).cancel()
-		self.set_missing_values()
-		self.make_gl_entries()
+		if flt(self.amount):
+			self.make_gl_entries()
 
 	def before_submit(self):
-		self.make_gl_entries()
+		if flt(self.amount):
+			self.make_gl_entries()
 
 	def make_gl_entries(self):
+		self.fiscal_year = get_fiscal_year(self.posting_date)[0]
+
 		gl_entries = []
 		self.make_customer_gl_entry(gl_entries)
 
@@ -67,5 +71,3 @@ class TransportationContract(Document):
 		gl_dict.update(args)
 		return gl_dict
 
-	def set_missing_values(self):
-		self.fiscal_year = get_fiscal_year(self.posting_date)[0]
